@@ -23,7 +23,11 @@
       <%- end -%>
       
       <div id="header">
-        <%= image_tag(current_user.logo.url) %>
+        <% if current_user %>
+          <%= image_tag(current_user.logo.url) %>
+        <% else %>
+          <%= image_tag("command_patch.png") %>
+        <% end %>
         <h2><%= @squadron_name || "Please edit your squadron name"%></h2>
         <address><%= @squadron_address || "Please edit your squadron address"%></address>
         <cite>“Lead from the Front”</cite>

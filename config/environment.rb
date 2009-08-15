@@ -21,6 +21,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "wycats-ufo", :lib => "flying_saucer", :source => "http://gems.github.com"
   config.gem "binarylogic-authlogic", :lib => "authlogic", :source => "http://gems.github.com"
+  config.gem "activerecord-jdbcmysql-adapter"
   # config.gem "pdf-writer", :lib => "pdf/writer"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
