@@ -64,6 +64,7 @@ a {
 #flash_notice, #flash_error {
   padding: 5px 8px;
   margin: 10px 0;
+  float: left;
 }
 
 #flash_notice {
@@ -236,4 +237,15 @@ form input {
 }
 #new_user_session input {
   clear: both;
+}
+
+/* user form */
+#new_user, #edit_user_1 {
+  width: 291px;
+  margin: 0 auto;
+}
+
+.edit_agenda_item p {
+  position: relative;
+  overflow: hidden;
 }

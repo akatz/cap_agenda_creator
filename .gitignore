@@ -1,5 +1,10 @@
 log/*.log
+log/*.pid
 tmp/**/*
 Capfile
 config/deploy.rb
 config/database.yml
+db/schema.rb
+db/sphinx
+config/*.sphinx.conf
+.DS_Store

@@ -1,7 +1,7 @@
 <% title "Edit Agenda Item" %>
 
 <%= render :partial => 'form' %>
-
+<%#=  Chronic.parse( @agenda_item.date.to_s + " " + params[:agenda_item][:start_time]).class %>
 <p>
   <%= link_to "Show", @agenda_agenda_item %> |
   <%= link_to "View All", agenda_agenda_items_path %>

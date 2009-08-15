@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090815005239) do
+ActiveRecord::Schema.define(:version => 20090815223011) do
 
   create_table "agenda_items", :force => true do |t|
     t.date     "date"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20090815005239) do
     t.integer  "agenda_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta",         :default => true, :null => false
   end
 
   create_table "agendas", :force => true do |t|

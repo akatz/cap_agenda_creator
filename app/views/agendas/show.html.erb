@@ -22,6 +22,6 @@
   <%= link_to "View All Agendas", agendas_path %> |
   <%= link_to "New Agenda Item", new_agenda_agenda_item_path(@agenda) %> | 
   <%= link_to "Show Agenda Items", agenda_agenda_items_path(@agenda) %> |
-  <%= link_to "Create PDF", agenda_path(@agenda) + ".pdf" %>
+  <%= link_to "Create PDF", agenda_path(@agenda, :format => 'pdf') %>
 </p>
 </div>

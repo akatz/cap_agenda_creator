@@ -2,10 +2,15 @@ require 'flying_saucer/itext_renderer'
 class AgendasController < ApplicationController
   before_filter :logged_in?
   before_filter :current_users_settings
+
   
-  Mime::Type.register "text/pdf", :pdf
+  
   def index
-    @agendas = current_user.agendas
+    if params[:search]
+      @agendas = AgendaItem.search(params[:search]).collect {|x| x.agenda if x.agenda.user == current_user}.compact
+    else
+      @agendas = current_user.agendas
+    end
   end
   
   def show
@@ -27,11 +32,11 @@ class AgendasController < ApplicationController
   end
   
   def new
-    @agenda = Agenda.new
+    @agenda = current_user.agendas.new
   end
   
   def create
-    @agenda = Agenda.new(params[:agenda])
+    @agenda = current_user.agendas.new(params[:agenda])
     if @agenda.save
       flash[:notice] = "Successfully created agenda."
       redirect_to @agenda

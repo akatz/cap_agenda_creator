@@ -6,11 +6,11 @@
   </p>
   <p>
     <%= f.label :start_time %><br />
-    <%= f.time_select :start_time %>
+    <%= f.text_field :start_time %>
   </p>
   <p>
     <%= f.label :end_time %><br />
-    <%= f.time_select :end_time %>
+    <%= f.text_field :end_time %>
   </p>
   <p>
     <%= f.label :activity_name %><br />
@@ -20,5 +20,6 @@
     <%= f.label :oic %><br />
     <%= f.text_field :oic %>
   </p>
+  <%= f.hidden_field :agenda_id %>
   <p><%= f.submit "Submit" %></p>
 <% end %>

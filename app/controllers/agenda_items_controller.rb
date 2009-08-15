@@ -10,19 +10,23 @@ class AgendaItemsController < ApplicationController
   end
   
   def new
-    @agenda_item = AgendaItem.new
+    @agenda_item = @agenda.agenda_items.new()
   end
   
   def create
-    @agenda_item = AgendaItem.new(params[:agenda_item])
-    @agenda_item.agenda = Agenda.find(params[:agenda_id])
-    @agenda_item.date = @agenda_item.agenda.date
-    if @agenda_item.save
+    
+    # params[:agenda_item][:agenda] = @agenda  unless params[:agenda_item].blank?
+    @agenda_item = @agenda.agenda_items.create(params[:agenda_item]) rescue AgendaItem.new(params[:agenda_item])
+    
+    if @agenda_item.valid? and not @agenda_item.new_record?
       flash[:notice] = "Successfully created agendaitem."
       redirect_to @agenda
     else
       render :action => 'new'
     end
+    
+    
+    
   end
   
   def edit
@@ -33,8 +37,13 @@ class AgendaItemsController < ApplicationController
     @agenda_item = AgendaItem.find(params[:id])
     @agenda_item.agenda = Agenda.find(params[:agenda_id])
     @agenda_item.date = @agenda_item.agenda.date
-    if @agenda_item.update_attributes(params[:agenda_item])
-      flash[:notice] = "Successfully updated agendaitem."
+    @agenda_item.activity_name = params[:agenda_item][:activity_name]
+    @agenda_item.oic = params[:agenda_item][:oic]
+    @agenda_item.start_time = (@agenda_item.date.to_s + " " + (Chronic.parse(  params[:agenda_item][:start_time])).strftime('%H:%M:%S')).to_time
+    @agenda_item.end_time =   (@agenda_item.date.to_s + " " + (Chronic.parse( params[:agenda_item][:end_time])).strftime('%H:%M:%S')).to_time
+    
+    if @agenda_item.save
+      flash[:notice] = "Successfully updated agenda item."
       redirect_to @agenda
     else
       render :action => 'edit'
@@ -45,7 +54,7 @@ class AgendaItemsController < ApplicationController
     @agenda_item = AgendaItem.find(params[:id])
     @agenda_item.destroy
     flash[:notice] = "Successfully destroyed agendaitem."
-    redirect_to @agenda
+    redirect_to agenda_agenda_items_path(@agenda)
   end
   
   private
