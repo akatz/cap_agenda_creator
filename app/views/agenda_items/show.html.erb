@@ -1,0 +1,28 @@
+<% title "Agenda Item" %>
+
+<p>
+  <strong>Date:</strong>
+  <%=h @agenda_item.date %>
+</p>
+<p>
+  <strong>Start Time:</strong>
+  <%=h @agenda_item.start_time %>
+</p>
+<p>
+  <strong>End Time:</strong>
+  <%=h @agenda_item.end_time %>
+</p>
+<p>
+  <strong>Activity Name:</strong>
+  <%=h @agenda_item.activity_name %>
+</p>
+<p>
+  <strong>Oic:</strong>
+  <%=h @agenda_item.oic %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_agenda_item_path(@agenda_item) %> |
+  <%= link_to "Destroy", @agenda_item, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", agenda_items_path %>
+</p>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2009-08-12
+  start_time: 2009-08-12 21:36:14
+  end_time: 2009-08-12 21:36:14
+  activity_name: MyString
+  oic: MyString
+
+two:
+  date: 2009-08-12
+  start_time: 2009-08-12 21:36:14
+  end_time: 2009-08-12 21:36:14
+  activity_name: MyString
+  oic: MyString

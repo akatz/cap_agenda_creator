@@ -1,0 +1,12 @@
+<% form_for @agenda do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </p>
+  <p>
+    <%= f.label :uod %><br />
+    <%= f.text_field :uod %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

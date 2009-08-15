@@ -1,0 +1,6 @@
+<li class='<%= cycle("even", "odd", :name => "row_class") -%>'>
+  <span class="time"><%= agenda_item.start_time.strftime('%H%M') %> - <%= agenda_item.end_time.strftime('%H%M') %></span>
+  <span class="duration"><%= (agenda_item.end_time - agenda_item.start_time).to_i/60 %> Minutes</span>
+  <span class="activity"><%= agenda_item.activity_name %></span>
+  <span class="oic"><%= agenda_item.oic %></span>
+</li>

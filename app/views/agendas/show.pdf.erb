@@ -1,0 +1,18 @@
+
+<div id="agenda">
+<p class="date">
+  <%=h @agenda.date.strftime('%d %b %y') %>
+</p>
+
+
+<ul id="activities">
+  <li class="header">
+    <span class="time">Time</span>
+    <span class="duration">Duration</span>
+    <span class="activity">Activity</span>
+    <span class="oic">OIC</span>
+  </li>
+  <%= render :partial => @agenda_items %> 
+</ul>
+<p id="uod"><span>Uniform of the Day:</span><%= @agenda.uod %></p>
+</div>

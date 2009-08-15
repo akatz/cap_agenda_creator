@@ -1,0 +1,28 @@
+<% title "Agenda Items" %>
+
+<table id="agenda_items_table">
+  <tr class="table_head">
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Activity Name</th>
+    <th>Oic</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% for agenda_item in @agenda_items %>
+    <tr class='<%= cycle("even", "odd", :name => "row_class") -%>'>
+      <td><%=h agenda_item.date.strftime('%d%b%y') %></td>
+      <td><%=h agenda_item.start_time.strftime('%H%M') %></td>
+      <td><%=h agenda_item.end_time.strftime('%H%M') %></td>
+      <td><%=h agenda_item.activity_name %></td>
+      <td><%=h agenda_item.oic %></td>
+      <td><%= link_to "Show", agenda_agenda_item_path(agenda_item.agenda, agenda_item.id) %></td>
+      <td><%= link_to "Edit", edit_agenda_agenda_item_path(agenda_item.agenda, agenda_item.id) %></td>
+      <td><%= link_to "Destroy", agenda_agenda_item_path(agenda_item.agenda, agenda_item.id), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Agenda Item", new_agenda_agenda_item_path %></p>

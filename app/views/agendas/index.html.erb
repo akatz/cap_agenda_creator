@@ -1,0 +1,17 @@
+<% title "Agendas" %>
+
+<table id="agendas_list">
+  <tr>
+    <th>Agendas</th>
+  </tr>
+  <% for agenda in @agendas %>
+    <tr class="<%= cycle("even", "odd", :name => "row_class") -%>">
+      <td><%=h agenda.date %></td>
+      <td><%= link_to "Show", agenda %></td>
+      <td><%= link_to "Edit", edit_agenda_path(agenda) %></td>
+      <td><%= link_to "Destroy", agenda, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Agenda", new_agenda_path %></p>
