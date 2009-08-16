@@ -2,7 +2,7 @@
 
 <table id="agenda_items_table">
   <tr class="table_head">
-    <th>Date</th>
+
     <th>Start Time</th>
     <th>End Time</th>
     <th>Activity Name</th>
@@ -13,7 +13,7 @@
   </tr>
   <% for agenda_item in @agenda_items %>
     <tr class='<%= cycle("even", "odd", :name => "row_class") -%>'>
-      <td><%=h agenda_item.date.strftime('%d%b%y') %></td>
+
       <td><%=h agenda_item.start_time.strftime('%H%M') %></td>
       <td><%=h agenda_item.end_time.strftime('%H%M') %></td>
       <td><%=h agenda_item.activity_name %></td>

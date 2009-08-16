@@ -4,7 +4,7 @@
   <tr>
     <th>Agendas</th>
   </tr>
-  <% if @agendas.empty? && params[:search]%>
+  <% if @agendas.empty?  && params[:search]%>
     <p> No agendas matched your query</p>
   <% end %>
   <% for agenda in @agendas %>
