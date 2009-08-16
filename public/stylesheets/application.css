@@ -249,3 +249,8 @@ form input {
   position: relative;
   overflow: hidden;
 }
+
+/* search box */
+#agenda_search {
+  float: left;
+}

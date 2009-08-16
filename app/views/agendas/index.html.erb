@@ -4,6 +4,9 @@
   <tr>
     <th>Agendas</th>
   </tr>
+  <% if @agendas.empty? && params[:search]%>
+    <p> No agendas matched your query</p>
+  <% end %>
   <% for agenda in @agendas %>
     <tr class="<%= cycle("even", "odd", :name => "row_class") -%>">
       <td><%=h agenda.date %></td>
@@ -14,10 +17,4 @@
   <% end %>
 </table>
 
-<% form_tag agendas_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
-<% end %>
 <p><%= link_to "New Agenda", new_agenda_path %></p>
