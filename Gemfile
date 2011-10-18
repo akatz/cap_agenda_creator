@@ -6,3 +6,4 @@ source "http://rubygems.org"
  gem "activerecord-jdbcmysql-adapter"
  gem "thinking-sphinx", :git => "https://github.com/freelancing-god/thinking-sphinx.git"
 
+ gem "trinidad"
