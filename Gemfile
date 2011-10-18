@@ -5,5 +5,6 @@ source "http://rubygems.org"
  gem "ufo", :require => "flying_saucer", :git => "https://github.com/wycats/rufo.git"
  gem "activerecord-jdbcmysql-adapter"
  gem "thinking-sphinx", :git => "https://github.com/freelancing-god/thinking-sphinx.git"
+ gem "authlogic"
 
  gem "trinidad"

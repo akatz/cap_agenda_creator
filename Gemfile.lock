@@ -33,6 +33,8 @@ GEM
     activesupport (2.3.3)
     after_commit (1.0.10)
       activerecord (>= 1.15.6, < 3.0.0)
+    authlogic (2.1.6)
+      activesupport
     builder (3.0.0)
     jdbc-mysql (5.1.13)
     jruby-rack (1.0.10)
@@ -57,6 +59,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbcmysql-adapter
+  authlogic
   rails (= 2.3.3)
   thinking-sphinx!
   trinidad
