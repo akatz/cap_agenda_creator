@@ -19,18 +19,18 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "wycats-ufo", :lib => "flying_saucer", :source => "http://gems.github.com"
-  config.gem "binarylogic-authlogic", :lib => "authlogic", :source => "http://gems.github.com"
-  config.gem "activerecord-jdbcmysql-adapter"
-  config.gem(
-    'freelancing-god-thinking-sphinx',
-    :lib         => 'thinking_sphinx',
-    :version     => '1.2.7'
-  )
+  #config.gem "wycats-ufo", :lib => "flying_saucer", :source => "http://gems.github.com"
+  #config.gem "binarylogic-authlogic", :lib => "authlogic", :source => "http://gems.github.com"
+  #config.gem "activerecord-jdbcmysql-adapter"
+  #config.gem(
+  #  'freelancing-god-thinking-sphinx',
+  #  :lib         => 'thinking_sphinx',
+  #  :version     => '1.2.7'
+  #)
 
 
-  config.gem "rspec", :lib => false, :version => ">= 1.2.0"
-  config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"  
+  #config.gem "rspec", :lib => false, :version => ">= 1.2.0"
+  #config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"  
   # config.gem "pdf-writer", :lib => "pdf/writer"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
