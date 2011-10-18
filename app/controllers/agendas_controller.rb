@@ -26,7 +26,6 @@ class AgendasController < ApplicationController
         new_pdf = File.open("/tmp/#{@agenda.date}.pdf", "w")
         FlyingSaucer.make_pdf( File.new("/tmp/#{current_user.username}.#{@agenda.date}.html") , :output => new_pdf)
         send_file(new_pdf.path)
-        new_pdf.close
       }
     end
     
