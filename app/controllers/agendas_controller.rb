@@ -1,4 +1,4 @@
-require 'flying_saucer/itext_renderer'
+require 'flying_saucer'
 class AgendasController < ApplicationController
   before_filter :logged_in?
   before_filter :current_users_settings
@@ -24,7 +24,7 @@ class AgendasController < ApplicationController
           f.write(render_to_string(:layout => true, :layout => "pdf"))
         end
         new_pdf = File.open("/tmp/#{@agenda.date}.pdf", "w")
-        ITextRenderer.new.make_pdf( "/tmp/#{current_user.username}.#{@agenda.date}.html" , new_pdf)
+        FlyingSaucer.new.make_pdf( "/tmp/#{current_user.username}.#{@agenda.date}.html" , new_pdf)
         send_file(new_pdf.path)
       }
     end
